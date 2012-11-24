@@ -1,72 +1,83 @@
 
-import java.util.*;
+public class Contact {
 
-public class Contact  {
-	
-	
-	private String firstN;
-	private String lastN;
-	private String zip;
+	private String firstName;
+	private String lastName;
 	private String email;
-	private String telephone;
+	private String zip;
+	private String phoneNumber;
 	private String notes;
 	
-	
 	/**
-	 * Contact list constructor
+	 * Constructor for a contact
 	 */
-	public Contact() {
+	public Contact(String fName, String lName, String email, String zip, String number, String notes) {
 		super();
-	}	
-	/**
-	 * Reads the input for initial contact
-	 */
-	
-	public void read() {
-		
-	
-		Scanner scanner;
-		scanner = new Scanner (System.in);
-		System.out.print("Enter First Name:");
-		this.firstN = scanner.nextLine();
-		System.out.print("Enter Last Name:");
-		this.lastN = scanner.nextLine();
-		System.out.print("Enter Zip:");
-		this.zip = scanner.nextLine();
-		scanner = new Scanner (System.in);
-		System.out.print("Enter Email Address:");
-		this.email = scanner.nextLine();
-		System.out.print("Enter Phone Number:");
-		this.telephone = scanner.nextLine();
-		System.out.print("Notes: ");
-		this.notes = scanner.nextLine();
-	}		
-
-	public void List() {
-		//Force user to enter a value for Last Name field
-		Scanner scanner;
-		scanner = new Scanner (System.in);
-		if ("false".equals(lastN)) {
-			System.out.println("You must enter a last name");
-			this.lastN = scanner.nextLine();
-		}
-		else {
-			//get list by Last Name
-			System.out.println("Thank you for entering a last name");			
-			}
+		this.firstName = fName;
+		this.lastName = lName;
+		this.email = email;
+		this.zip = zip;
+		this.phoneNumber = number;
+		this.notes = notes;
 	}
-	
 	
 	@Override
 	public String toString() {
-		return "First Name: " + firstN + "\n"+
-				"Last Name: " + lastN + "\n" +
+		return "First Name: " + firstName + "\n"+
+				"Last Name: " + lastName + "\n" +
 				"Zip: "+ zip + "\n" +
 				"Email Address: " + email + "\n"+
-				"Telephone: " + telephone+ "\n" +
+				"Telephone: " + phoneNumber+ "\n" +
 				"Notes: " + notes;
-	}		
+	}	
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getStreetAddress() {
+		return zip;
+	}
+
+	public void setStreetAddress(String streetAddress) {
+		this.zip = streetAddress;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
 	
-	 
 	
 }
